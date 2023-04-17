@@ -1,0 +1,281 @@
+/* Styling for Paywall Invoice Creator */
+
+/* Set the background color and font family */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: url("https://images.unsplash.com/photo-1629196914168-3a2652305f9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1006&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Center the content */
+h1, #paywall-form, #response {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Style the header */
+h1 {
+  text-align: left;
+  color: #0c2461;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  margin-left: 3%;
+}
+
+/* Style the form */
+#logo {
+  float: left;
+  width: auto;
+  height: 35px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+nav {
+  float: right;
+}
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+#my-button {
+  display: block;
+  margin-top: 8px;
+  margin-right: 10px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  background-color: #7959d7;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#my-button:hover {
+  background-color: #5545b5;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+/* Set the position and style of the input elements */
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+  width: 90%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 0.2rem auto;
+  display: block;
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: 1rem; /* adjust the value as needed */
+}
+
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-left: 18px;
+  color: white;
+  font-family: Courier, monospace;
+  font-style: italic;
+  background-color: #5545b5;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 2px 5px 3px;
+
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 18px;
+  width: 30px;
+  border: 2px solid #5545b5;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  vertical-align: middle;
+  position: relative;
+  top: 0px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+
+}
+
+input[type="checkbox"]:checked {
+  background-color: #5545b5;
+  border: 2px solid #5545b5;
+}
+
+
+
+
+
+/* Position and style the checkbox */
+#remembers {
+  display:none;
+}
+
+
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #5545b5;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+button[type="submit"]:hover {
+  background-color: #5545b5;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Style the response div */
+#response {
+  display: none;
+  min-height: 10px;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: #0c2461;
+  padding: 1rem;
+  border: 2px solid #0c2461;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  word-wrap: break-word;
+}
+
+
+#copyBtn {
+  display: block;
+  margin: 5px auto;
+  padding: 8px 16px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: #7959d7;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#copyBtn:hover {
+  background-color: #5545b5;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Add CSS for the footer */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Add CSS for the modal */
+/* Add CSS for the modal */
+.modal {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+}
+
+.modal-content {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 500px;
+  border: none;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  top: 0;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer-button {
+  display:none;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+  background-color: #5545b5;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+}
+
+.modal-button {
+  position: absolute;
+  top: .7px;
+  right: 0px;
+  height: 100%;
+  display: block;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: #7959d7;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+.input-wrapper {
+  position: relative;
+  height: 40px;
+}

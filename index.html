@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="paywall.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json">
+
+  <title>Zapit</title>
+</head>
+
+<body>
+  
+  
+  <form id="paywall-form">
+    
+    <div class="header">
+      <img src="logo.png" alt="Your Logo" id="logo">
+      <button type="button" id="my-button" onclick="window.location.href='https://sighup.zapit.live/'">Create Login Key</button>
+    </div>
+  
+   
+
+    <input type="text" id="url" name="url" placeholder="Media URL" required><br>
+    
+
+    <input type="text" id="memo" name="memo" placeholder="Heading"><br>
+    
+
+    <input type="text" id="description" name="description" placeholder="Description" required><br>
+
+
+    
+
+    <input type="number" id="amount" name="amount" placeholder="Amount" required><br>
+
+    <input type="password" id="api-key" name="api-key" placeholder="Login key"><br>
+    
+    <label for="rememberApiKey">Keep Login:</label>
+    <input type="checkbox" id="rememberApiKey" name="rememberApiKey"><br>
+    
+
+    <label for="remembers" style="display:none;">Remember user:</label>
+    <input type="checkbox" id="remembers" name="remembers" checked style="display:none;"><br>
+    
+    <button type="submit" onclick="showResponse()">Monetize</button>
+  </form>  
+  
+
+  <div id="response"></div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js")
+          .then(registration => console.log("Service worker registered"))
+          .catch(error => console.error("Service worker registration failed", error));
+      });
+    }
+  </script>
+  <div class="footer">
+    <button type="button" id="open-modal-btn" class="footer-button" onclick="openModal()">Wallet</button>
+    <!-- Add the modal with an input field and a button -->
+    <div id="myModal" class="modal" >
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="input-wrapper">
+          <input type="text" id="modal-input" name="modal-input" placeholder="Wallet ">
+          <button type="button" class="modal-button">Acess</button>
+        </div>
+        <span class="close" onclick="closeModal()">&times;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add the scripts -->
+  <script src="app.js"></script>
+  
+</body>
+</html>
