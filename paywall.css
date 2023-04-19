@@ -342,7 +342,7 @@ footer {
 }
 @media (max-width: 767px) {
   footer {
-    max-width: 90%;
+    max-width: 80%;
   margin: 0 auto;
   }
 }
@@ -398,8 +398,8 @@ footer {
 
 #delete-btn {
   background-color: red;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 15px;
+  margin-left: 100px;
   margin-bottom: 10px;
 }
 
