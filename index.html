@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="paywall.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="manifest.json">
+
+  <title>Zapit</title>
+</head>
+
+<body>
+  
+  
+  <form id="paywall-form">
+    
+    <div class="header">
+      <img src="logo.png" alt="Your Logo" id="logo">
+      <button type="button" id="toggleButton">Login/Sighup</button>
+    </div>
+    <div id="hiddenElements" class="hidden">
+      <button type="button" id="my-button2" onclick="window.location.href='https://sighup.zapit.live/'">Create New User</button><br>
+      <input type="password" id="api-key" name="api-key" placeholder="Login key"><br>
+      <input type="password" id="wallet-id" name="wallet-id" placeholder="Wallet id"><br>
+      <label for="rememberApiKey">Keep Login:</label>
+      <input type="checkbox" id="rememberApiKey" name="rememberApiKey" checked>
+      <button1 id="delete-btn">Logout</button1>
+      <hr> <!-- Add horizontal rule here -->
+    </div>
+  
+   
+
+    <input type="text" id="url" name="url" placeholder="Media URL" required><br>
+    
+
+    <input type="text" id="memo" name="memo" placeholder="Heading"><br>
+    
+
+    <input type="text" id="description" name="description" placeholder="Description" required><br>
+
+
+    
+
+    <input type="number" id="amount" name="amount" placeholder="Amount" required><br>
+
+    
+
+    <label for="remembers" style="display:none;">Remember user:</label>
+    <input type="checkbox" id="remembers" name="remembers" checked style="display:none;"><br>
+    
+    <button type="submit" onclick="showResponse()">Monetize</button>
+  </form>  
+  
+
+  <div id="response"></div>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js")
+          .then(registration => console.log("Service worker registered"))
+          .catch(error => console.error("Service worker registration failed", error));
+      });
+    }
+  </script>
+<footer>
+  <div class="footer-container">
+    <hr>
+    <div class="button-container">
+      <button id="open-wallet-btn">Wallet</button>
+    </div>
+  </div>
+</footer>
+  <!-- Add the scripts -->
+  <script src="app.js"></script>
+  
+</body>
+</html>
