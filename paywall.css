@@ -1,5 +1,5 @@
 /* Styling for Paywall Invoice Creator */
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
 /* Set the background color and font family */
 html, body {
   height: 100%;
@@ -10,6 +10,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 50px;
+  margin: 0%;
 }
 
 /* Center the content */
@@ -45,6 +47,7 @@ nav {
   position: relative;
   display: flex;
   justify-content: space-between;
+  margin-bottom: -15px;
 }
 
 #my-button {
@@ -336,16 +339,20 @@ hr {
     border: 0;
 }
 
+
+
+
+
 footer {
-  max-width: 550px;
-  margin: 0 auto;
+  position: static;
+  bottom: 0;
+  width: 100%;
+  max-width: 95%;
+  margin:0 auto;
+  margin-top: 25px;
 }
-@media (max-width: 767px) {
-  footer {
-    max-width: 80%;
-  margin: 0 auto;
-  }
-}
+
+
 .button-container {
   text-align: center;
   overflow: hidden;
@@ -403,5 +410,48 @@ footer {
   margin-bottom: 10px;
 }
 
+h2 {
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-weight: 540; /* Set font-weight to lighter */
+  margin-bottom: 5px;
+  width: 95%; /* set the width of h2 element to 50% of its parent's width */
+  margin: 10 auto; /* set the top and bottom margin to 0, and left and right margin to auto */
+  word-wrap: break-word;
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+@media screen and (max-width: 800px) { /* apply this style only when the screen width is less than or equal to 600px */
+  h2 {
+    font-size: 1.1em;
+    margin: 0; /* set all margins to 0 */
+  }
+}
+
+h3 {
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 540; /* Set font-weight to lighter */
+  margin-bottom: 5px;
+  width: 95%; /* set the width of h2 element to 50% of its parent's width */
+  margin: 10 auto; /* set the top and bottom margin to 0, and left and right margin to auto */
+  word-wrap: break-word;
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+@media screen and (max-width: 800px) { /* apply this style only when the screen width is less than or equal to 600px */
+  h3 {
+    font-size: .8em;
+    margin: 0; /* set all margins to 0 */
+  }
+}
 
 
