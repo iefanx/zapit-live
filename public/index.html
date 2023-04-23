@@ -15,7 +15,7 @@
     
     <div class="header">
       <img src="logo.png" alt="Your Logo" id="logo">
-      <button type="button" id="toggleButton">Login/Sighup</button>
+      <button type="button" id="toggleButton">Login</button>
     </div>
     
     <div id="hiddenElements" class="hidden">
@@ -26,26 +26,21 @@
       <input type="password" id="wallet-id" name="wallet-id" placeholder="Wallet id"><br>
       <label for="rememberApiKey">Keep Login:</label>
       <input type="checkbox" id="rememberApiKey" name="rememberApiKey" checked>
-      <button id="delete-btn">Logout</button>
+      <button id="delete-btn">Log out</button>
+      <div class="wrapper">
+        <div class="divider div-transparent"></div></div>
       <hr> <!-- Add horizontal rule here -->
     </div>
   
-    <h2>Put any content, such as a <b>blog post, picture, video, or book </b> behind a <b>lightning paywall</b> in seconds.</h2>  
+    <h2>Put any content behind <mark> Bitcoin lightning paywall.</mark><br> Any content such as Blog, Videos, Picture & Pdf. Create paywalled link & share it Everywhere. </h2>
+      
+    <input type="text" id="memo" name="memo" placeholder="Heading" required><br>
     
-    <input type="text" id="url" name="url" placeholder="Media URL" required><br>
-    
-
-    <input type="text" id="memo" name="memo" placeholder="Heading"><br>
-    
-
     <input type="text" id="description" name="description" placeholder="Description" required><br>
 
-
+    <input type="text" id="url" name="url" placeholder="Media URL" required><br>
     
-
-    <input type="number" id="amount" name="amount" placeholder="Amount" required><br>
-
-    
+    <input type="number" id="amount" name="amount" placeholder="Minimum Price" required><br>
 
     <label for="remembers" style="display:none;">Remember user:</label>
     <input type="checkbox" id="remembers" name="remembers" checked style="display:none;"><br>
@@ -66,16 +61,31 @@
     }
   </script>
 <footer>
-  <div class="footer-container">
+
     <hr>
     <div class="button-container">
       <button id="open-wallet-btn">Wallet</button>
     </div>
   </div>
-  <h3>Create <b>Login key,</b> paste <b>Media URl</b> you want to monetize, <b>set minimum price</b> & Click <b>Monetize</b>. <b>Share the Paywalled link Anywhere. </b></h3>
+ 
+
 </footer>
+<h3>Create <b>Login key,</b> paste <b>Media URl</b> you want to monetize, <b>set minimum price</b> & Click <b>Monetize</b>. <b>Share the Paywalled link Anywhere. </b><br><BR> Developed by & for Nostriches</h3>
+
   <!-- Add the scripts -->
   <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('/service-worker.js')
+          .then((registration) => console.log('Service worker registered'))
+          .catch((error) => console.error('Service worker registration failed', error));
+      });
+    }
+  </script>
+
+  
   
 </body>
 </html>

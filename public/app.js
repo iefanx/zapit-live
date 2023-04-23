@@ -79,7 +79,7 @@ function showPaywallLink(data) {
   const paywallId = data.id;
   const responseElement = document.getElementById('response');
   if (typeof paywallId === 'undefined') {
-    responseElement.innerText = 'Please check your Login Key';
+    responseElement.innerText = 'Please check your Login Key by pressing "Login" button';
   } else {
     responseElement.innerHTML = `
       <button id="copyBtn">Copy Paywall link</button>
@@ -150,6 +150,13 @@ const hiddenElements = document.getElementById('hiddenElements');
 toggleButton.addEventListener('click', () => {
   hiddenElements.classList.toggle('hidden');
 });
+
+document.addEventListener('click', (event) => {
+  if (!hiddenElements.contains(event.target) && !toggleButton.contains(event.target) && !hiddenElements.classList.contains('hidden')) {
+    hiddenElements.classList.add('hidden');
+  }
+});
+
 
 const deleteBtn = document.getElementById('delete-btn');
 deleteBtn.addEventListener('click', handleDeleteClick);
