@@ -22,6 +22,7 @@ h1,
 #paywall-form {
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
 }
 
 /* Style the header */
@@ -104,6 +105,8 @@ input[type="password"] {
   color: white;
 }
 
+
+input[type="media"]::placeholder,
 input[type="text"]::placeholder,
 input[type="number"]::placeholder,
 input[type="password"]::placeholder {
@@ -112,6 +115,67 @@ input[type="password"]::placeholder {
   font-size: 1rem;
   /* adjust the value as needed */
 }
+
+
+
+
+
+
+.media-button {
+  background: #323a3a;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    padding: 4px 14px;
+    position: absolute;
+    right: 10px;
+    top: 69%;
+    transform: translateY(-50%);
+    max-height: 90%;
+    margin-right: 4%;
+  
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#url {
+  width: 90%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 18px auto;
+  display: block;
+  background-color: #2d2d2d;
+  margin-top: 0%;
+  color: white;
+  
+}
+
+.media-button {
+  padding: 0rem 0rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #2d2d2d;
+  color: #9595ea;
+  cursor: pointer;
+  margin: -19px;
+  margin-right: 4%;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif, 'arial';
+  
+}
+
+
 
 
 label {
@@ -194,12 +258,12 @@ button[type="submit"]:hover {
   text-align: center;
   font-weight: bold;
   font-size: 0.7rem;
-  color: #0c2461;
+  color: #9595ea;
   padding: 1rem;
-  border: 2px solid #0c2461;
+  border: 2px solid #9595ea;
   border-radius: 0.5rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  background-color: #f5f5f5;
+  background-color: #2d2d2d;
   word-wrap: break-word;
   max-width: 70%;
   margin: 1.5rem auto;
@@ -420,10 +484,37 @@ footer {
   margin-right: 5px;
 }
 
+#installPWA {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: white;
+  font-family: Courier, monospace;
+  font-style: italic;
+  background-color: #5545b5;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 2px 5px 3px;
+  float: center;
+
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
 #delete-btn {
-  background-color: red;
+  background-color: rgb(241, 81, 81);
   margin-right: 15px;
-  margin-left: 100px;
+  margin-left: 10px;
   margin-bottom: 10px;
 }
 
@@ -500,4 +591,91 @@ mark{
   background-color: #f29f05;
 }
 
+
+#myModal {
+  max-width: 600px;
+
+}
+
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+}
+
+.modal2 .modal-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.modal-content2 {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border: 1px solid #f3f0f0;
+  width: 80%;
+  max-width: 600px;
+  color: #f8f5f5;
+  
+}
+h4 {
+  font-family: 'Roboto', sans-serif, 'arial';
+  font-weight: 400;
+  font-size: 14px;
+  color: #bbb8b8;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 95%;
+
+
+}
+
+@media screen and (max-width: 800px) {
+
+  /* apply this style only when the screen width is less than or equal to 600px */
+  h4 {
+    font-size: 12px;
+    
+    /* set all margins to 0 */
+  }
+  .modal2 {
+    left: 0;
+  }
+
+  .modal2 .modal-content-wrapper {
+    top: -60px;
+  }
+}
+
+.link-button {
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: white;
+  font-family: Courier, monospace;
+  font-style: italic;
+  background-color: #5545b5;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 2px 5px 3px;
+  float: center;
+
+  margin-bottom: 5px;
+}
 
