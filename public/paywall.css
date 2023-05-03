@@ -56,6 +56,10 @@ nav {
   margin-bottom: -15px;
 }
 
+a {
+  color: #9595ea; /* Change this to the desired color */
+}
+
 #my-button {
   display: block;
   margin-top: 8px;
