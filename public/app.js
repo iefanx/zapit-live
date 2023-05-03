@@ -210,21 +210,26 @@ if ('serviceWorker' in navigator) {
 
 
 
-
 let deferredPrompt;
 const installButton = document.getElementById('installPWA');
 
-// Listen for the beforeinstallprompt event
-window.addEventListener('beforeinstallprompt', (event) => {
-  // Prevent Chrome 67 and earlier from automatically showing the prompt
-  event.preventDefault();
+// Check if the app is already installed
+if (!window.matchMedia('(display-mode: standalone)').matches) {
+  // Listen for the beforeinstallprompt event
+  window.addEventListener('beforeinstallprompt', (event) => {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    event.preventDefault();
 
-  // Stash the event so it can be triggered later
-  deferredPrompt = event;
+    // Stash the event so it can be triggered later
+    deferredPrompt = event;
 
-  // Update UI to notify the user they can install the PWA
-  installButton.hidden = false;
-});
+    // Update UI to notify the user they can install the PWA
+    installButton.hidden = false;
+  });
+} else {
+  // If the app is already installed, hide the button
+  installButton.hidden = true;
+}
 
 // When the button is clicked, trigger the prompt
 installButton.addEventListener('click', () => {
@@ -250,6 +255,7 @@ window.addEventListener('appinstalled', () => {
   installButton.hidden = true;
   console.log('PWA installed successfully.');
 });
+
 
 const createLinkBtn = document.getElementById('createLinkBtn');
 const modal = document.getElementById('myModal');
