@@ -197,7 +197,7 @@ function handleOpenWalletClick() {
 
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then((registration) => {
+  navigator.serviceWorker.register('/public/service-worker.js').then((registration) => {
     console.log('Service Worker registered with scope:', registration.scope);
   }).catch((error) => {
     console.error('Service Worker registration failed:', error);
@@ -206,15 +206,23 @@ if ('serviceWorker' in navigator) {
 
 
 // JavaScript code to prompt the user to install the PWA when they click the button
-
-
-
-
 let deferredPrompt;
 const installButton = document.getElementById('installPWA');
 
-// Check if the app is already installed
-if (!window.matchMedia('(display-mode: standalone)').matches) {
+// Function to check if the PWA is already installed
+function isPWAInstalled() {
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    return true;
+  } else if ('standalone' in navigator && navigator.standalone) {
+    return true;
+  }
+  return false;
+}
+
+// If PWA is already installed, hide the install button
+if (isPWAInstalled()) {
+  installButton.hidden = true;
+} else {
   // Listen for the beforeinstallprompt event
   window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
@@ -226,9 +234,6 @@ if (!window.matchMedia('(display-mode: standalone)').matches) {
     // Update UI to notify the user they can install the PWA
     installButton.hidden = false;
   });
-} else {
-  // If the app is already installed, hide the button
-  installButton.hidden = true;
 }
 
 // When the button is clicked, trigger the prompt
