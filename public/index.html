@@ -32,13 +32,35 @@
       <hr> <!-- Add horizontal rule here -->
     </div>
   
-    <h2>Put any content behind <mark> Bitcoin lightning paywall.</mark><br> Any content such as Blog, Videos, Picture & Pdf. Create paywalled link & share it Everywhere. </h2>
+    <h2>Put any content behind <mark> Bitcoin lightning paywall.</mark>
+      <br> Any content such as Blog, Videos, Audio, Picture & PDF. Create paywalled
+       link & share it Everywhere. </h2>
       
-    <input type="text" id="memo" name="memo" placeholder="Heading" required><br>
+       <input type="text" id="memo" name="memo" placeholder="Heading" required><br>
+       <input type="text" id="description" name="description" placeholder="Description" required><br>
+     
+       <div class="input-container">
+        <input type="text" id="url" name="url" placeholder="Media URL" required>
+        <button2 id="createLinkBtn" class="media-button">Create Link</button2>  
+      </div>
+      
+      <div id="myModal" class="modal2">
+       <div class="modal-content-wrapper">
+         <div class="modal-content2">
+           <span class="close">&times;</span>
+           <h4>Create media link using Media Uploader, Create, Copy & Paste it here. Remember all this data will be public. For private upload use your own uploader.</h4>
+           <div class="button-container">
+             <button1 id="openWebsiteBtn" class="link-button">Nostr.build</button1>
+           </div>
+         </div>
+       </div>
+     </div>
+      
+      
     
-    <input type="text" id="description" name="description" placeholder="Description" required><br>
+    
 
-    <input type="text" id="url" name="url" placeholder="Media URL" required><br>
+    </div>
     
     <input type="number" id="amount" name="amount" placeholder="Minimum Price" required><br>
 
@@ -64,11 +86,13 @@
 
     <hr>
     <div class="button-container">
+      
+      <button id="installPWA" >Install</button>
       <button id="open-wallet-btn">Wallet</button>
+
     </div>
   </div>
  
-
 </footer>
 <h3>Create <b>Login key,</b> paste <b>Media URl</b> you want to monetize, <b>set minimum price</b> & Click <b>Monetize</b>. <b>Share the Paywalled link Anywhere. </b><br><BR> Developed by <a href="https://nostrplebs.com/s/iefan" target="_blank" rel="noopener noreferrer">iefan</a> for Nostriches.</h3>
 
