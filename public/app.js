@@ -206,3 +206,75 @@ if ('serviceWorker' in navigator) {
 
 
 // JavaScript code to prompt the user to install the PWA when they click the button
+
+
+
+
+
+let deferredPrompt;
+const installButton = document.getElementById('installPWA');
+
+// Listen for the beforeinstallprompt event
+window.addEventListener('beforeinstallprompt', (event) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  event.preventDefault();
+
+  // Stash the event so it can be triggered later
+  deferredPrompt = event;
+
+  // Update UI to notify the user they can install the PWA
+  installButton.hidden = false;
+});
+
+// When the button is clicked, trigger the prompt
+installButton.addEventListener('click', () => {
+  // Hide the button
+  installButton.hidden = true;
+
+  // Show the prompt
+  deferredPrompt.prompt();
+
+  // Wait for the user to respond to the prompt
+  deferredPrompt.userChoice.then((choiceResult) => {
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User accepted the PWA installation');
+    } else {
+      console.log('User dismissed the PWA installation');
+    }
+    deferredPrompt = null;
+  });
+});
+
+// Detect when the PWA is installed and update the UI
+window.addEventListener('appinstalled', () => {
+  installButton.hidden = true;
+  console.log('PWA installed successfully.');
+});
+
+const createLinkBtn = document.getElementById('createLinkBtn');
+const modal = document.getElementById('myModal');
+const closeModal = document.querySelector('.close');
+
+// Open the modal when the "Create Link" button is clicked
+createLinkBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+// Close the modal when the "X" button is clicked
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close the modal when the user clicks outside the modal content
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+const openWebsiteBtn = document.getElementById('openWebsiteBtn');
+const websiteUrl = 'https://nostr.build/'; // Replace this with the desired website URL
+
+openWebsiteBtn.addEventListener('click', () => {
+  window.open(websiteUrl, '_blank');
+});
