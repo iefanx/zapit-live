@@ -2,8 +2,8 @@ const CACHE_NAME = 'my-app-cache-v1';
 const urlsToCache = [
   '/',
   '/public/index.html',
-  '/public/styles.css',
-  '/public/script.js',
+  '/public/paywall.css',
+  '/public/app.js',
   // Add other assets and resources you want to cache
 ];
 
