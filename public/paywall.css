@@ -140,6 +140,7 @@ textarea#description {
   width: 90%;
   padding: 0.5rem;
   font-size: 1.2rem;
+  resize: none;
   border-radius: 0.3rem;
   border: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
