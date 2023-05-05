@@ -105,6 +105,16 @@ input[type="password"] {
   color: white;
 }
 
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  color: white;
+  background-color: #2d2d2d;
+}
+
+
+
 
 input[type="media"]::placeholder,
 input[type="text"]::placeholder,
@@ -113,9 +123,30 @@ input[type="password"]::placeholder {
   color: #999;
   font-style: italic;
   font-size: 1rem;
+  font-family: "Times New Roman", Times, serif;
   /* adjust the value as needed */
 }
 
+textarea#description {
+  width: 90%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 0.1rem auto;
+  display: block;
+  background-color: #2d2d2d;
+  margin-top: 0%;
+  color: white;
+  font-family: "Times New Roman", Times, serif; /* Allow the user to resize the textarea vertically */
+}
+
+textarea#description::placeholder {
+  color: #999;
+  font-style: italic;
+  font-size: 1rem;
+}
 
 
 
@@ -711,7 +742,5 @@ h4 {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
   padding: 2px 5px 3px;
   float: center;
-
-  margin-bottom: 5px;
 }
 
