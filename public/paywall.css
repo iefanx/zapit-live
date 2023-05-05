@@ -105,6 +105,14 @@ input[type="password"] {
   color: white;
 }
 
+input[type="text"]:-webkit-autofill,
+input[type="number"]:-webkit-autofill,
+input[type="password"]:-webkit-autofill {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #2d2d2d inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 input[type="text"]:focus,
 input[type="number"]:focus,
 input[type="password"]:focus {
@@ -112,6 +120,8 @@ input[type="password"]:focus {
   color: white;
   background-color: #2d2d2d;
 }
+
+
 
 
 
