@@ -1,27 +1,23 @@
-const CACHE_NAME = 'my-app-cache-v1';
+const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
-  '/',
+  '/public',
   '/public/index.html',
   '/public/paywall.css',
   '/public/app.js',
-  // Add other assets and resources you want to cache
+  // Add more assets here as needed
 ];
 
 self.addEventListener('install', (event) => {
-  // Perform install steps
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Opened cache:', CACHE_NAME);
-        return cache.addAll(urlsToCache);
-      })
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log('Opened cache');
+      return cache.addAll(urlsToCache);
+    })
   );
-  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [CACHE_NAME];
-
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
@@ -33,38 +29,25 @@ self.addEventListener('activate', (event) => {
       );
     })
   );
-
-  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then((response) => {
-        // Cache hit - return response
-        if (response) {
+        if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;
         }
 
-        // Fetch from network and cache the response
-        return fetch(event.request).then(
-          (response) => {
-            // Check if we received a valid response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
+        const responseToCache = response.clone();
+        caches.open(CACHE_NAME).then((cache) => {
+          cache.put(event.request, responseToCache);
+        });
 
-            // Clone the response to not modify the original one
-            const responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then((cache) => {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          }
-        );
+        return response;
+      })
+      .catch(() => {
+        return caches.match(event.request);
       })
   );
 });
