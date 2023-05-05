@@ -146,6 +146,7 @@ textarea#description {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin: 0.1rem auto;
   display: block;
+  border: none;
   background-color: #2d2d2d;
   margin-top: 0%;
   color: white;
