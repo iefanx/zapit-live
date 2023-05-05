@@ -484,7 +484,14 @@ footer {
   margin-right: 5px;
 }
 
-#installPWA {
+#buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.common-button {
   font-size: 14px;
   font-weight: bold;
   margin-right: 5px;
@@ -499,12 +506,8 @@ footer {
   cursor: pointer;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
   padding: 2px 5px 3px;
-  float: center;
-
   margin-bottom: 5px;
 }
-
-
 
 
 
@@ -538,6 +541,12 @@ h2 {
     font-size: .8em;
     /* set all margins to 0 */
   }
+
+  .modal-content3 {
+
+    width: 60%; /* Change the width value here */
+  }
+  
 }
 
 
@@ -594,7 +603,6 @@ mark{
 
 #myModal {
   max-width: 600px;
-
 }
 
 .modal2 {
@@ -606,7 +614,6 @@ mark{
   width: 100%;
   height: 100%;
   overflow: auto;
-
 }
 
 .modal2 .modal-content-wrapper {
@@ -616,7 +623,6 @@ mark{
   position: absolute;
   width: 100%;
   height: 100%;
-
 }
 
 
@@ -627,8 +633,45 @@ mark{
   width: 80%;
   max-width: 600px;
   color: #f8f5f5;
-  
 }
+
+
+
+.modal3 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal3 .modal-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal-content3 {
+  background-color: #2d2d2d;
+  padding: 20px;
+  border: 1px solid #f3f0f0;
+  width: 70%; /* Change the width value here */
+  max-width: 600px;
+  color: #f8f5f5;
+}
+
+
+
+
 h4 {
   font-family: 'Roboto', sans-serif, 'arial';
   font-weight: 400;
@@ -636,28 +679,21 @@ h4 {
   color: #bbb8b8;
   line-height: 1.5;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   max-width: 95%;
-
-
 }
 
 @media screen and (max-width: 800px) {
-
   /* apply this style only when the screen width is less than or equal to 600px */
   h4 {
     font-size: 12px;
-    
     /* set all margins to 0 */
   }
   .modal2 {
     left: 0;
   }
-
-  .modal2 .modal-content-wrapper {
-    top: -60px;
-  }
 }
+
 
 .link-button {
   font-size: 14px;
