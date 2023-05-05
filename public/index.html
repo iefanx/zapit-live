@@ -39,7 +39,8 @@
        link & share it Everywhere. </h2>
       
        <input type="text" id="memo" name="memo" placeholder="Heading" required><br>
-       <input type="text" id="description" name="description" placeholder="Description" required><br>
+       <textarea id="description" name="description" placeholder="Description" required rows="3"></textarea><br>
+
      
        <div class="input-container">
         <input type="text" id="url" name="url" placeholder="Media URL" required>
@@ -64,10 +65,10 @@
             <span class="close">&times;</span>
             <h4>Recommended: Create a Zapit PWA app for better experience, After this you can use it like a Native application & always up-to-date. </h4>
              <div class="button-container">
-              <button1 type="button" id="installPWA" class="common-button">Android & PC</button1>   
+              <button1 type="button" id="installPWA" class="common-button">Install on Android & PC</button1>   
              </div>
-             <h4>For IOS & Safari User</h4>
-             <h3>On Safari Click one "Share icon" on top right corner & than click on "Add to Home Screen". Done! </h3> 
+             <h4><mark>IOS & Safari User</mark></h4>
+             <h4>On Safari Click one "Share icon" on top right corner & than click on "Add to Home Screen". Done! </h4> 
           </div>
         </div>
       </div>
@@ -78,18 +79,40 @@
     
     
 
+     <style>
+      .input-wrapper {
+        position: relative;
+      }
+    
+      .corner-text {
+        position: absolute;
+        right: 5px;
+        top: 45%;
+        transform: translateY(-50%);
+        font-size: 14px;
+        color: #e9910e;
+        margin-right: 5%;
+        font-family: 'Roboto', sans-serif, 'arial';
+
+      }
+    </style>
+    
+    <div class="input-wrapper">
+      <input type="text"  id="amount" name="amount" placeholder="Minimum Price" required>
+      <span class="corner-text">Sats</span>
     </div>
     
-    <input type="number" id="amount" name="amount" placeholder="Minimum Price" required><br>
+
 
     <label for="remembers" style="display:none;">Remember user:</label>
     <input type="checkbox" id="remembers" name="remembers" checked style="display:none;"><br>
     
     <button type="submit" onclick="showResponse()">Monetize</button>
+    <div id="response"></div>
   </form>  
   
 
-  <div id="response"></div>
+  
 
   <script>
     if ("serviceWorker" in navigator) {
