@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="paywall.css?v=1.2">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="manifest" href="manifest.json">
 
   <title>Zapit</title>
@@ -43,18 +45,34 @@
         <input type="text" id="url" name="url" placeholder="Media URL" required>
         <button2 id="createLinkBtn" class="media-button">Create Link</button2>  
       </div>
-      
       <div id="myModal" class="modal2">
-       <div class="modal-content-wrapper">
-         <div class="modal-content2">
+        <div class="modal-content-wrapper">
+          <div class="modal-content2">
            <span class="close">&times;</span>
-           <h4>Create media link using Media Uploader, Create, Copy & Paste it here. Remember all this data will be public. For private upload use your own uploader.</h4>
-           <div class="button-container">
-             <button1 id="openWebsiteBtn" class="link-button">Nostr.build</button1>
-           </div>
-         </div>
-       </div>
+            <h4>Create media link using Media Uploader, Create, Copy & Paste it here. Remember all this data will be public. For private upload use your own uploader.</h4>
+            <div class="button-container">
+              <button1 id="openWebsiteBtn" class="link-button">Nostr.build</button1>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      
+      <div id="newModal" class="modal3">
+        <div class="modal-content-wrapper">
+          <div class="modal-content3">
+            <span class="close">&times;</span>
+            <h4>Recommended: Create a Zapit PWA app for better experience, After this you can use it like a Native application & always up-to-date. </h4>
+             <div class="button-container">
+              <button1 type="button" id="installPWA" class="common-button">Android & PC</button1>   
+             </div>
+             <h4>For IOS & Safari User1</h4>
+             <h3>On Safari Click one "Share icon" on top right corner & than click on "Add to Home Screen". Done! </h3> 
+          </div>
+        </div>
+      </div>
      </div>
+     
       
       
     
@@ -83,38 +101,48 @@
     }
   </script>
 <footer>
+  
+
+  
 
     <hr>
     <div class="button-container">
-      
-      <button id="installPWA" >Install</button>
-      <button id="open-wallet-btn">Wallet</button>
+      <button id="otherButton" class="common-button">Marketplace</button>
+      <button id="open-wallet-btn" class="common-button">Wallet</button>
+      <button id="newButton" class="common-button">Download</button>
+
 
     </div>
-  </div>
- 
+    
+    <script>
+      if (window.matchMedia('(display-mode: standalone)').matches) {
+        document.getElementById('newButton').style.display = 'none';
+      }
+      </script> 
 </footer>
 <h3>Create <b>Login key,</b> paste <b>Media URl</b> you want to monetize, <b>set minimum price</b> & Click <b>Monetize</b>. <b>Share the Paywalled link Anywhere. </b><br><BR> Developed by <a href="https://nostrplebs.com/s/iefan" target="_blank" rel="noopener noreferrer">iefan</a> for Nostriches.</h3>
 
   <!-- Add the scripts -->
-<script src="app.js?v=1.2"></script>
+<script src="app.js?v=1.3"></script>
   
   <script>
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js').then(
-        (registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        },
-        (err) => {
-          console.error('Service Worker registration failed:', err);
-        }
-      );
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, (err) => {
+      console.log('ServiceWorker registration failed: ', err);
     });
-  }
+  });
+}
+
 </script>
 
-
+<script>
+  document.getElementById("openWebsiteBtn").addEventListener("click", function(){
+    window.location.href = "https://nostr.build/";
+  });
+  </script>
   
   
 </body>
