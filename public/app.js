@@ -212,6 +212,21 @@ function handleOtherButtonClick() {
   }
 }
 
+const opensplit = document.getElementById('opensplit');
+opensplit.addEventListener('click', handleOtherButtonClick);
+
+// Create a function to handle the other button click event:
+function handleOtherButtonClick() {
+  const walletIdField = document.getElementById('wallet-id');
+  const walletId = walletIdField.value;
+  if (walletId) {
+    const modifiedWalletId = walletId.replace('wallet', 'splitpayments');
+    const walletUrl = `${modifiedWalletId}`; // Replace with the actual wallet URL format for the other button
+    window.open(walletUrl, '_blank');
+  } else {
+    alert('Please enter a Wallet ID in "Login');
+  }
+}
 
 
 let deferredPrompt;
