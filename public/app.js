@@ -229,6 +229,32 @@ function handleOtherButtonClick() {
 }
 
 
+// Select the button with the ID 'openWithdraw'
+const openWithdrawBtn = document.getElementById('openWithdraw');
+// Add a click event listener to this button
+openWithdrawBtn.addEventListener('click', handleWithdrawButtonClick);
+
+// Create a function to handle the withdraw button click event
+function handleWithdrawButtonClick() {
+  // Get the value of the input field with the ID 'wallet-id'
+  const walletIdField = document.getElementById('wallet-id');
+  const walletId = walletIdField.value;
+
+  // Check if a walletId is provided
+  if (walletId) {
+    // Modify the walletId to replace 'wallet' with 'withdraw'
+    const modifiedWalletId = walletId.replace('wallet', 'withdraw');
+    // Construct the wallet URL with the modified walletId
+    const walletUrl = `${modifiedWalletId}`;
+    // Open the wallet URL in a new browser window/tab
+    window.open(walletUrl, '_blank');
+  } else {
+    // If no walletId is provided, show an alert
+    alert('Please enter a Wallet ID in "Login');
+  }
+}
+
+
 let deferredPrompt;
 
 // Listen for the `beforeinstallprompt` event
