@@ -110,24 +110,6 @@
     <button type="submit" onclick="showResponse()">Monetize</button>
     <div id="response"></div>
   </form>  
-  
-
-  
-
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/service-worker.js")
-          .then(registration => console.log("Service worker registered"))
-          .catch(error => console.error("Service worker registration failed", error));
-      });
-    }
-  </script>
-<footer>
-  
-
-  
-
     <hr>
     <div class="button-container">
       <button id="newButton" class="common-button">Download</button>
@@ -145,26 +127,21 @@
 <h3>Create <b>Login key,</b> paste <b>Media URl</b> you want to monetize, <b>set minimum price</b> & Click <b>Monetize</b>. <b>Share the Paywalled link Anywhere. </b><br><BR> Developed by <a href="https://nostrplebs.com/s/iefan" target="_blank" rel="noopener noreferrer">iefan</a> for Nostriches.</h3>
 
   <!-- Add the scripts -->
-<script src="app.js?v=1.3"></script>
+<script src="app.js"></script>
   
+ 
   <script>
-  if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, (err) => {
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-
-</script>
-
-<script>
-  document.getElementById("openWebsiteBtn").addEventListener("click", function(){
-    window.location.href = "https://nostr.build/";
-  });
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/public/service-worker.js')
+          .then(function (registration) {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(function (error) {
+            console.error('Service Worker registration failed:', error);
+          });
+      }
   </script>
+ 
   
   
 </body>
